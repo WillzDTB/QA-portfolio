@@ -3,5 +3,5 @@
 WEBSITE_URL = 'URL'
 
 BUTTON_1 = 'value'
-BUTTON 2 = 'value'
-BUTTON 3 = 'value'
+BUTTON_2 = 'value'
+BUTTON_3 = 'value'
