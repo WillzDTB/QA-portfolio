@@ -20,6 +20,8 @@ class TestX:
         test_page.enter_info(data.E_VALUE, data.P_VALUE)
         assert test_page.get_email() == data.E_VALUE
         assert test_page.get_pass() == data.P_VALUE
+        test_page.enter_feed(data.FEED_VALUE)
+        assert test_page.get_feed() == data.FEED_VALUE
     def test_feed(self):
         self.driver.get(data.WEBSITE_URL)
         test_page = TestPage(self.driver)
