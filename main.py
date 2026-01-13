@@ -1,5 +1,4 @@
 import data
-import helpers
 from selenium import webdriver
 
 from pages import X_Page
