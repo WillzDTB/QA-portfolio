@@ -37,7 +37,14 @@ class X_Page:
          self.driver.find_element(*self.FEED_A_FIELD).send_keys(feed_text)
          WebDriverWait(self.driver, 10).until( expected_conditions.visibility_of_element_located(self.X_LOCATOR))
          self.driver.find_element(*self.LOGIN_BUTT).click()
-      #combined change below
-      def enter_feedback(self, feed_text):
-         self.driver.find_element(*self.FEED_A_FIELD).send_keys(feed_text)
+# FORM SUB PAGE
+      def enter_form(self, name_text, email_text, cn_text, date_text):
+         self.driver.find_element(*self.NAME_FIELD).send_keys(name_text)
+         self.driver.find_element(*self.EMAIL_FS_FIELD).send_keys(email_text)
+         self.driver.find_element(*self.CN_FIELD).send_keys(cn_text)
+         self.driver.find_element(*self.DATE_FIELD).send_keys(date_text)
+         self.driver.find_element(*self.FEED_FS_FIELD).send_keys(feed_text)
+         WebDriverWait(self.driver, 10).until( expected_conditions.visibility_of_element_located(self.X_LOCATOR))
+         self.driver.find_element(*self.LOGIN_BUTT).click()
+# DND PAGE
         return self.driver.find_element(*self.FEED_A_FIELD).get_property("textContent")
