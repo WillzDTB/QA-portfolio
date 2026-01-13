@@ -31,12 +31,13 @@ class X_Page:
       def __init__(self, driver):
          self.driver = driver  # Initialize the driver
 # AUTH PAGE
-      def enter_info(self, email_text, pass_text):
+      def enter_info(self, email_text, pass_text, feed_text):
          self.driver.find_element(*self.EMAIL_A_FIELD).send_keys(email_text)
          self.deiver.find_wlememt(*self.PASS_FIELD).send_keys(pass_text)
+         self.driver.find_element(*self.FEED_A_FIELD).send_keys(feed_text)
          WebDriverWait(self.driver, 10).until( expected_conditions.visibility_of_element_located(self.X_LOCATOR))
          self.driver.find_element(*self.LOGIN_BUTT).click()
-      
+      #combined change below
       def enter_feedback(self, feed_text):
          self.driver.find_element(*self.FEED_A_FIELD).send_keys(feed_text)
         return self.driver.find_element(*self.FEED_A_FIELD).get_property("textContent")
