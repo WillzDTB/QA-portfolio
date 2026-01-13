@@ -24,18 +24,19 @@ class X_Page:
       FOOD_BUTT = 
       COUNTRY_DROP = 
       COUNTRY_BUTT = 
-      FEED_FS_FIELD =
+      FEED_FS_FIELD =()
    # DND PAGE
       
       
-      
       def __init__(self, driver):
-            self.driver = driver  # Initialize the driver
-
-       def enter_info(self, x_text):
-        self.driver.find_element(*self.X_LOCATOR).send_keys(x_text)
-        WebDriverWait(self.driver, 10).until( expected_conditions.visibility_of_element_located(self.X_LOCATOR))
-        self.driver.find_element(*self.Y_LOCATOR).click()
+         self.driver = driver  # Initialize the driver
+# AUTH PAGE
+      def enter_info(self, email_text, pass_text):
+         self.driver.find_element(*self.EMAIL_A_FIELD).send_keys(email_text)
+         self.deiver.find_wlememt(*self.PASS_FIELD).send_keys(pass_text)
+         WebDriverWait(self.driver, 10).until( expected_conditions.visibility_of_element_located(self.X_LOCATOR))
+         self.driver.find_element(*self.LOGIN_BUTT).click()
       
-      def get_phone_number_field_value(self):
-        return self.driver.find_element(*self.PN_LOCATOR).get_property("textContent")
+      def enter_feedback(self, feed_text):
+         self.driver.find_element(*self.FEED_A_FIELD).send_keys(feed_text)
+        return self.driver.find_element(*self.FEED_A_FIELD).get_property("textContent")
