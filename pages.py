@@ -10,10 +10,22 @@ import helpers
 
 class X_Page:
    # AUTH PAGE
-      EMAIL_FIELD = (By.ID, 'x')
+      EMAIL_A_FIELD = (By.ID, 'x')
       PASS_FIELD = (By.XPATH, 'x')
       LOGIN_BUTT = (By.CLASS, 'x')
-      FEED_FIELD = (By.)
+      FEED_A_FIELD = (By.)
+   # FORM SUB PAGE
+      NAME_FIELD = 
+      EMAIL_FS_FIELD = 
+      CN_FIELD =
+      DATE_FIELD =
+      UPLOAD_BUTT =
+      COLOR_BUTT =
+      FOOD_BUTT = 
+      COUNTRY_DROP = 
+      COUNTRY_BUTT = 
+      FEED_FS_FIELD =
+   # DND PAGE
       
       
       
