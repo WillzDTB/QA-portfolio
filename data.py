@@ -1,7 +1,7 @@
 # File with constants
 
-WEBSITE_URL = 'URL'
+WEBSITE_URL = 'https://practice.qabrains.com'
 
-BUTTON_1 = 'value'
-BUTTON_2 = 'value'
-BUTTON_3 = 'value'
+E_INPUT = 'will_tester@gmail.com'
+P_INPUT = 'Tester123'
+FEED_INPUT = 'Hello World'
