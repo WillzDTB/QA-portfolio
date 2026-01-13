@@ -20,9 +20,12 @@ class TestX:
         assert test_page.get_email() == data.E_VALUE
         assert test_page.get_pass() == data.P_VALUE
         assert test_page.get_feed() == data.FEED_VALUE
-# merged func change below
-    def test_feed(self):
+# FS PAGE
+    def test_auth(self):
         self.driver.get(data.WEBSITE_URL)
         test_page = TestPage(self.driver)
-        test_page.enter_feed(data.FEED_VALUE)
+        test_page.enter_form(data.E_VALUE, data.P_VALUE, data.FEED_VALUE)
+        assert test_page.get_email() == data.E_VALUE
+        assert test_page.get_pass() == data.P_VALUE
         assert test_page.get_feed() == data.FEED_VALUE
+# DND PAGE
