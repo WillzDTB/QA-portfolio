@@ -10,14 +10,18 @@ class TestX:
         capabilities = DesiredCapabilities.CHROME
         capabilities["goog:loggingPrefs"] = {'performance': 'ALL'}
         cls.driver = webdriver.Chrome()
-        if helpers.is_url_reachable(data.URBAN_ROUTES_URL):
-            print("Connected to the Urban Routes server")
+        if helpers.is_url_reachable(data.WEBSITE_URL):
+            print("Connected to the Test server")
         else:
-            print("Cannot connect to Urban Routes. Check the server is on and still running")
-    def test_set_route(self):
-        self.driver.get(data.URBAN_ROUTES_URL)
-        urban_routes_page = UrbanRoutesPage(self.driver)
-        urban_routes_page.enter_locations(data.ADDRESS_FROM, data.ADDRESS_TO)
-        assert urban_routes_page.get_from() == data.ADDRESS_FROM
-        assert urban_routes_page.get_to() == data.ADDRESS_TO
-    def test_select_plan(self):
+            print("Cannot connect to Test server. Check the server is on and still running")
+    def test_auth(self):
+        self.driver.get(data.WEBSITE_URL)
+        test_page = TestPage(self.driver)
+        test_page.enter_info(data.E_VALUE, data.P_VALUE)
+        assert test_page.get_email() == data.E_VALUE
+        assert test_page.get_pass() == data.P_VALUE
+    def test_feed(self):
+        self.driver.get(data.WEBSITE_URL)
+        test_page = TestPage(self.driver)
+        test_page.enter_feed(data.FEED_VALUE)
+        assert test_page.get_feed() == data.FEED_VALUE
