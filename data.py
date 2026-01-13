@@ -2,6 +2,6 @@
 
 WEBSITE_URL = 'https://practice.qabrains.com'
 # USER AUTH PAGE
-E_INPUT = 'will_tester@gmail.com'
-P_INPUT = 'Tester123'
-FEED_INPUT = 'Hello World'
+E_VALUE = 'will_tester@gmail.com'
+P_VALUE = 'Tester123'
+FEED_VALUE = 'Hello World'
